@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <title>Coverageye</title>
+  </head>
+  <body>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script> 
+      <h1>Covereye Report</h1>
+      <div class="panel panel-default">        
+        <table class="table table-sm table-bordered">
+          <thead class="thead-dark" style="display:table; width:100%; table-layout:fixed;">
+            <tr style="display:table; width:100%; table-layout:fixed;">
+              <th scope="col">Components/Attributes</th>
+              {{#each attributes}}
+                <th scope="col">{{this}}</th>
+              {{/each}}
+            </tr>
+          </thead>
+          <tbody id="table-contents">
+            {{#each body}}
+                <tr style="display:table; width:100%; table-layout:fixed;">
+                  <th scope="row" style="background-color:#212529;color:#fff">{{@key}}</th>
+                {{#each this}}
+                  <td id="{{@key}}">
+                    <ul class="list-group">
+                  {{#each this}}
+                      <li class="list-group-item">
+                        {{this}}
+                      </li>
+                  {{/each}}
+                    </ul>
+                  </td>
+                {{/each}}
+                </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  <script>
+  // self executing function here
+  (function() {
+    var elt = document.getElementById('table-contents');
+    elt.setAttribute("style", `display:block; max-height:${window.innerHeight}px; overflow-y:scroll;`);
+  })();
+  </script>
+  </body>
+</html>
+
+

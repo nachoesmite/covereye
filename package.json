@@ -1,0 +1,27 @@
+{
+  "name": "covereye",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "covereye": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nachoesmite/covereye.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nachoesmite/covereye/issues"
+  },
+  "homepage": "https://github.com/nachoesmite/covereye#readme",
+  "dependencies": {
+    "commander": "^2.15.1",
+    "handlebars": "^4.0.11",
+    "js-yaml": "^3.11.0"
+  }
+}
